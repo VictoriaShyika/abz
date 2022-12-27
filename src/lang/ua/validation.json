@@ -1,0 +1,7 @@
+{
+  "EMAIL": "Enter a valid email address",
+  "MIN_LENGTH": "Enter more than {{min}}",
+  "MAX_LENGTH": "Enter less than {{max}}",
+  "REQUIRED": "Field if requaired",
+  "PHONE": "Enter the correct mobile number in international format"
+}
