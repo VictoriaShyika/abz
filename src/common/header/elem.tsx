@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../button';
 import logoIcon from '../../asset/svg/Logo.svg';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 
 export const Elem: React.FC = () => {
   return (
@@ -48,7 +49,7 @@ const Container = styled.div`
 const Logo = styled.img``;
 
 const Header = styled.div`
-  background-color: #ffffff;
+  background-color: ${COLOR_DATA[COLOR_ENUM.WHITE]};
   display: flex;
   align-items: center;
   justify-content: center;

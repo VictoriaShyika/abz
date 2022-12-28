@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { COLOR_TYPE } from '../../theme/color';
+import { COLOR_DATA, COLOR_ENUM, COLOR_TYPE } from '../../theme/color';
 import { Text } from '../text';
 import { PROPS_TYPE } from './constant';
 
@@ -42,12 +42,16 @@ const Button = styled.button<{
   border-radius: 80px;
   ${({ disabled }) => css`
     cursor: ${disabled ? 'default' : 'pointer'};
-    background-color: ${disabled ? '#B4B4B4' : `#f4e041`};
+    background-color: ${disabled
+      ? COLOR_DATA[COLOR_ENUM.BUTTON_DISABLED]
+      : COLOR_DATA[COLOR_ENUM.YELLOW]};
     & > * {
       color: ${disabled ? 'white' : `black`};
     }
     &:hover {
-      background-color: ${disabled ? '#B4B4B4' : `#ffe302`};
+      background-color: ${disabled
+        ? COLOR_DATA[COLOR_ENUM.BUTTON_DISABLED]
+        : COLOR_DATA[COLOR_ENUM.BUTTON_HOVER]};
     }
   `};
 `;

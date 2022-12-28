@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Component } from './component';
 import { useQuery } from 'react-query';
 import { action } from './action';
-import { FORM_VALUE_ENUM, FORM_VALUE_TYPE, MODULE_NAME } from './constant';
+import {
+  API_POST,
+  FORM_VALUE_ENUM,
+  FORM_VALUE_TYPE,
+  GET_TOKEN,
+  MODULE_NAME,
+} from './constant';
 import { FormikValues, useFormik } from 'formik';
 import { validation } from '../../lib/validation';
 import {
@@ -16,7 +22,7 @@ import {
 const config = {
   [FORM_VALUE_ENUM.NAME]: [required, minLength(2), maxLength(60)],
   [FORM_VALUE_ENUM.EMAIL]: [required, email],
-  [FORM_VALUE_ENUM.PHONE]: [phoneUA, required],
+  [FORM_VALUE_ENUM.PHONE]: [phoneUA, required, maxLength(13)],
   [FORM_VALUE_ENUM.POSITION_ID]: [required],
   [FORM_VALUE_ENUM.PHOTO]: [required],
 };
@@ -42,7 +48,7 @@ export const Container: React.FC<{ id: any; setUsers: any }> = ({
   const [postLoading, setPostLoading] = useState<any>(false);
 
   const getToken: any = () => {
-    fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
+    fetch(GET_TOKEN.URL)
       .then(function (response) {
         return response.json();
       })
@@ -108,7 +114,7 @@ export const Container: React.FC<{ id: any; setUsers: any }> = ({
       formData.append(FORM_VALUE_ENUM.PHOTO, values[FORM_VALUE_ENUM.PHOTO]);
       setPostLoading(true);
 
-      fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+      fetch(API_POST.URL, {
         method: 'POST',
         body: formData,
         headers: { Token: token },

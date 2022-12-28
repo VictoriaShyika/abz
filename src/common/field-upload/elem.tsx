@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 import { Text } from '../text';
 
 export const Elem: React.FC<{
@@ -32,19 +33,17 @@ export const Elem: React.FC<{
 };
 
 const LableText = styled(Text)`
-  color: #7e7e7e;
+  color: ${COLOR_DATA[COLOR_ENUM.LABEL]};
 `;
 const Container = styled.div`
-  /* width: 380px; */
   display: flex;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 85px minmax(245px, 297px);
-  /* grid-template-rows: 54px; */
 `;
 const Label = styled.label`
   border: 1px solid black;
-  background: #f8f8f8;
+  background: ${COLOR_DATA[COLOR_ENUM.LIGHT_GRAY]};
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   padding: 14px 15px;
@@ -54,7 +53,7 @@ const Label = styled.label`
   box-sizing: border-box;
 `;
 const FileName = styled.div`
-  border: 1px solid #d0cfcf;
+  border: 1px solid ${COLOR_DATA[COLOR_ENUM.BORDER]};
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-left: none;

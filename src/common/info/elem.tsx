@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import bgIcon from '../../asset/svg/infoBG.jpeg';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 import { Button } from '../button';
 import { Heading } from '../heading';
 import { Text } from '../text';
@@ -47,7 +48,7 @@ const Container = styled.div<{ backgroundImg: string }>`
 `;
 const TextContainer = styled.div`
   text-align: center;
-  color: #ffffff;
+  color: ${COLOR_DATA[COLOR_ENUM.WHITE]};
   gap: 21px;
   word-wrap: break-word;
   display: grid;

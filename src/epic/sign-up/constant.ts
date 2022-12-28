@@ -10,12 +10,10 @@ export const API = {
 };
 
 export const API_POST = {
-  TYPE: 'POST',
   URL: 'https://frontend-test-assignment-api.abz.agency/api/v1/users',
 };
 
 export const GET_TOKEN = {
-  TYPE: 'GET',
   URL: 'https://frontend-test-assignment-api.abz.agency/api/v1/token',
 };
 

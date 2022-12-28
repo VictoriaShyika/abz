@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 import { Text } from '../text';
 
 export const Elem: React.FC<{
@@ -7,7 +8,7 @@ export const Elem: React.FC<{
 }> = ({ user }) => {
   return (
     <Card key={user.id}>
-      <Img src={user.photo} />
+      <Img src={user.photo} alt="user photo" />
       <Text
         tid={
           user.name.length > 38
@@ -43,7 +44,7 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: #ffffff;
+  background-color: ${COLOR_DATA[COLOR_ENUM.WHITE]};
   border-radius: 10px;
 `;
 
@@ -60,8 +61,8 @@ const Tooltip = styled.div`
   opacity: 0.87;
   width: 100%;
   padding: 3px 16px;
-  background: #000000;
-  color: #ffffff;
+  background: ${COLOR_DATA[COLOR_ENUM.BLACK]};
+  color: ${COLOR_DATA[COLOR_ENUM.WHITE]};
   position: absolute;
   top: 36px;
   left: 50px;
@@ -72,6 +73,8 @@ const Tooltip = styled.div`
 
 const Img = styled.img`
   border-radius: 50%;
+  height: 70px;
+  width: 70px;
 `;
 const ConTooltip = styled.div`
   position: relative;

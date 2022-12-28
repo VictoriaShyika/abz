@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 import { Text } from '../text';
 
 export const Elem: React.FC<{
@@ -29,11 +30,11 @@ const SelectContainer = styled.label`
 const Radio = styled.input`
   -webkit-appearance: none;
   appearance: none;
-  background-color: #fff;
+  background-color: ${COLOR_DATA[COLOR_ENUM.WHITE]};
   margin: 0;
   width: 20px;
   height: 20px;
-  border: 1px solid #d0cfcf;
+  border: 1px solid ${COLOR_DATA[COLOR_ENUM.BORDER]};
   border-radius: 50%;
   display: grid;
   place-content: center;
@@ -46,13 +47,13 @@ const Radio = styled.input`
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #00bdd3;
+    box-shadow: inset 1em 1em ${COLOR_DATA[COLOR_ENUM.BLUE]};
   }
   &:checked::before {
     transform: scale(1);
-    border: 1px solid #00bdd3;
+    border: 1px solid ${COLOR_DATA[COLOR_ENUM.BLUE]};
   }
   &:checked {
-    border: 1px solid #00bdd3;
+    border: 1px solid ${COLOR_DATA[COLOR_ENUM.BLUE]};
   }
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { i18n } from '../../lib/lang';
+import { COLOR_DATA, COLOR_ENUM } from '../../theme/color';
 import { Text } from '../text';
 import { PROPS_TYPE } from './constant';
 
@@ -65,9 +66,9 @@ export const Elem: React.FC<PROPS_TYPE> = ({
 };
 
 const Input = styled.input<{ error?: boolean }>`
-  border: 1px solid #d0cfcf;
+  border: 1px solid ${COLOR_DATA[COLOR_ENUM.BORDER]};
   box-sizing: border-box;
-  background: #f8f8f8;
+  background: ${COLOR_DATA[COLOR_ENUM.LIGHT_GRAY]};
   outline: none;
   border-radius: 4px;
   width: 380px;
@@ -75,7 +76,9 @@ const Input = styled.input<{ error?: boolean }>`
   line-height: 26px;
   font-size: 16px;
   ${({ error }) => css`
-    border: ${error ? ' 2px solid #CB3D40' : `  1px solid #d0cfcf`};
+    border: ${error
+      ? `2px solid ${COLOR_DATA[COLOR_ENUM.ERROR]}`
+      : `  1px solid ${COLOR_DATA[COLOR_ENUM.BORDER]}`};
   `};
   @media (max-width: 400px) {
     width: 348px;
@@ -89,7 +92,7 @@ const ErrorMessage = styled.div`
   & > * {
     font-size: 12px;
     line-height: 14px;
-    color: #cb3d40;
+    color: ${COLOR_DATA[COLOR_ENUM.ERROR]};
   }
 `;
 
@@ -114,9 +117,9 @@ const Label = styled.label<{ error?: boolean; value?: string }>`
   position: absolute;
   left: 16px;
   top: -8px;
-  background: #f8f8f8;
+  background: ${COLOR_DATA[COLOR_ENUM.LIGHT_GRAY]};
   ${({ error, value }) => css`
-    color: ${error && '#CB3D40'};
+    color: ${error && COLOR_DATA[COLOR_ENUM.ERROR]};
     display: ${!value && 'none'};
   `};
 `;
